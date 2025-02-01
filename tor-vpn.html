@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tor & VPNs | CyberSec Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #0ff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: #111;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 2px solid #0ff;
+        }
+        .sidebar h2 {
+            color: #0ff;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #0ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .content-container {
+            margin-left: 270px;
+            padding: 40px;
+            max-width: 1200px;
+        }
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #0ff;
+        }
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        footer {
+            padding: 20px;
+            background: #111;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 2px solid #0ff;
+        }
+        .banner {
+            background-color: #333;
+            padding: 20px;
+            color: #0ff;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            background-image: url('images/tor.gif');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="physical-hacking.html">Physical Hacking</a></li>
+            <li><a href="opsec.html">OpSec & Anonymity</a></li>
+            <li><a href="web-security.html">Web Security</a></li>
+            <li><a href="malware.html">Malware & Exploits</a></li>
+            <li><a href="threat-intelligence.html">Threat Intelligence</a></li>
+            <li><a href="featured.html">Featured Blogs & Sites</a></li>
+            <li><a href="wallets.html">Wallets & PGP</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <h1>Tor & VPNs</h1>
+        <div class="banner">Darknet</div>
+
+        <section>
+            <h2>Introduction to Tor and VPNs</h2>
+            <p>Both Tor and VPNs are powerful tools for online privacy and anonymity, but they serve different purposes and offer distinct advantages and drawbacks. It’s important to understand their differences, uses, and potential security risks before deciding which to use for your online activities.</p>
+            <ul>
+                <li><strong>Tor (The Onion Router):</strong> Tor is a free, open-source software that enables anonymous communication by routing your internet traffic through a volunteer-operated network of servers, known as relays, to obscure the user's location and usage.</li>
+                <li><strong>VPNs (Virtual Private Networks):</strong> A VPN creates a secure tunnel between your device and a remote server. Your internet traffic is encrypted, and your IP address is masked by the VPN server’s address.</li>
+            </ul>
+            <p>While both protect your privacy, Tor is decentralized and more focused on anonymity, while VPNs offer encrypted connections with a degree of privacy but are typically centralized and may log activity. The combination of both can provide enhanced protection, but it’s essential to consider the trustworthiness of the VPN provider.</p>
+        </section>
+
+        <section>
+            <h2>History of Tor</h2>
+            <p>Tor, short for The Onion Router, was originally developed in the mid-1990s by the U.S. Navy to protect government communications. It was created to help protect government intelligence communications while ensuring anonymity for those engaged in sensitive activities. Initially designed for military use, Tor's technology became more public-facing over time, and it was released to the public in 2002 by the Electronic Frontier Foundation (EFF). Since then, Tor has grown into one of the most recognized tools for online privacy and anonymity.</p>
+            <p>The key principle behind Tor is its use of multiple layers of encryption to relay internet traffic through a distributed network of relays or nodes. This system, referred to as "onion routing," makes it extremely difficult to trace the origin of internet traffic. As the internet and privacy threats have evolved, Tor has continuously adapted, integrating more robust security features to protect users against increasingly sophisticated surveillance tactics.</p>
+            <p>In the years following its release, Tor gained popularity among privacy advocates, journalists, and activists in repressive countries where internet censorship is widespread. Today, Tor is widely used by individuals looking to preserve their anonymity online, whether for political, personal, or professional reasons.</p>
+        </section>
+
+        <section>
+            <h2>Installing and Configuring Tor</h2>
+            <p>Tor, or The Onion Router, is a privacy-focused browser and network that helps users stay anonymous online. Below is a step-by-step guide on how to install and configure Tor on different operating systems.</p>
+            
+            <h3>Installing Tor on Windows</h3>
+            <ol>
+                <li>Download the Tor Browser from the official website: <a href="https://www.torproject.org/">https://www.torproject.org/</a></li>
+                <li>Run the downloaded installer and follow the on-screen instructions.</li>
+                <li>Once installed, launch the Tor Browser and click "Connect" to access the Tor network.</li>
+            </ol>
+            
+            <h3>Installing Tor on Linux ( assuming you do not use arch btw )</h3>
+            <ol>
+                <li>Open a terminal and update your package lists:<br><code>sudo apt update && sudo apt upgrade</code></li>
+                <li>Install Tor using:<br><code>sudo apt install tor</code></li>
+                <li>Start the Tor service:<br><code>sudo systemctl start tor</code></li>
+                <li>Enable Tor to start on boot:<br><code>sudo systemctl enable tor</code></li>
+            </ol>
+            
+            <h3>Configuring Tor for Enhanced Security</h3>
+            <p>To maximize privacy, you can modify the Tor configuration file located at <code>/etc/tor/torrc</code>. Adjust settings such as:</p>
+            <ul>
+                <li><code>UseBridges 1</code> - Enables the use of bridges to bypass censorship.</li>
+                <li><code>ClientOnly 1</code> - Ensures your device only acts as a client and not a relay.</li>
+            </ul>
+            <p>For additional privacy, consider using Tor over a VPN, or combining it with a hardened operating system like Tails (more on this later).</p>
+        </section>
+
+        <section>
+            <h2>Why PGP Keys Are Useful</h2>
+            <p>Pretty Good Privacy (PGP) is a data encryption and decryption program that provides cryptographic privacy and authentication for communications. It’s primarily used to encrypt emails, files, and even your digital identity. Using PGP is crucial for secure communication, especially when dealing with sensitive information. Below is an explanation of why PGP keys are important and how they contribute to digital security.</p>
+            <ul>
+                <li><strong>Encryption:</strong> PGP allows you to encrypt your messages and files, ensuring that only the intended recipient can read them. This is accomplished through public-key cryptography, where the sender encrypts the message with the recipient’s public key, and only the recipient can decrypt it using their private key.</li>
+                <li><strong>Authentication:</strong> PGP also offers a mechanism for signing messages and files, proving that they come from a legitimate source. This is especially useful to verify the identity of a sender in scenarios where trust is crucial, like during software distribution or sensitive communications.</li>
+                <li><strong>Integrity:</strong> PGP ensures that the message or file hasn’t been altered during transmission. It does this through a hashing process, which provides a unique fingerprint of the original data.</li>
+            </ul>
+            <p>By using PGP keys, you maintain the confidentiality, authenticity, and integrity of your communications, making it an essential tool for secure and private online interactions.</p>
+        </section>
+
+        <section>
+            <h2>Verifying Checksums</h2>
+            <p>When downloading files, especially software like Tor or Tails, it’s critical to verify the checksum. A checksum is a unique string of characters generated by a hash function that represents the file's contents. This ensures that the file hasn’t been tampered with and is exactly what the developer intended to distribute.</p>
+            <p>Here’s why it’s important to verify the checksum:</p>
+            <ul>
+                <li><strong>Integrity:</strong> Verifying a checksum ensures that the file you downloaded is complete and has not been altered. Malicious actors may alter downloadable files to distribute malware or spyware. By verifying the checksum, you can avoid these threats.</li>
+                <li><strong>Authenticity:</strong> A checksum can help you confirm that the file you downloaded comes from a trusted source. When the checksum matches the one provided by the developer, you can be sure that the file has not been tampered with.</li>
+                <li><strong>Prevention of Man-in-the-Middle Attacks:</strong> If you’re downloading from an unsecured website or through a potentially compromised network, verifying the checksum can protect you from man-in-the-middle attacks where an attacker intercepts and alters the file during transmission.</li>
+            </ul>
+            <p>To verify a checksum, compare the hash value generated from the downloaded file with the official checksum provided on the developer's website. If they match, you can be confident that the file is legitimate.</p>
+        </section>
+        
+        <section>
+            <h2>Darknet Markets</h2>
+            <p>Tor enables access to hidden services known as "onion services." These have been used for various purposes, including whistleblowing, secure communications, and, controversially, darknet markets. Notable darknet markets include:</p>
+            <ul>
+                <li><strong>Silk Road:</strong> One of the first darknet markets, shut down by the FBI in 2013.</li>
+                <li><strong>AlphaBay:</strong> A large market for illicit goods, taken down in 2017.</li>
+                <li><strong>Empire Market:</strong> A major player until it mysteriously vanished in 2020.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How Law Enforcement Tracks Tor Users</h2>
+            <p>While Tor provides strong anonymity, law enforcement agencies have developed methods to de-anonymize users, including:</p>
+            <ul>
+                <li>Traffic correlation attacks: Monitoring entry and exit nodes to link user activity.</li>
+                <li>Compromised nodes: Running malicious exit nodes to capture unencrypted data.</li>
+                <li>Operational security failures: Users revealing personal information through bad habits.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Privacy-Focused Operating Systems</h2>
+            <p>For enhanced anonymity, users often combine Tor with privacy-focused operating systems:</p>
+            <ul>
+                <li><strong>Tails OS:</strong> A live operating system designed for privacy, leaving no traces on the computer.</li>
+                <li><strong>Whonix:</strong> A security-focused OS that routes all traffic through Tor, isolating applications.</li>
+                <li><strong>Qubes OS:</strong> A compartmentalized security OS that can run Whonix for Tor-based anonymity.</li>
+            </ul>
+        </section>
+        
+        <section>
+          <h2>VPNs: Overview and Technical Details</h2>
+          <p>Here are various types of VPN protocols, each with its own strengths and weaknesses, and they play a significant role in determining the security, speed, and overall performance of your VPN connection. Some of the most common protocols include: </P>
+
+    <li><strong>OpenVPN (UDP/TCP):</strong>
+        Advantages: OpenVPN is open-source, highly customizable, and considered one of the most secure protocols available. It uses SSL/TLS for key exchange, making it resistant to eavesdropping.
+        Disadvantages: It can be a bit slower than other protocols due to the encryption overhead.</li>
+
+    <li><strong>WireGuard:</strong>
+        Advantages: WireGuard is a modern, lightweight VPN protocol that is gaining popularity for its simplicity, efficiency, and excellent performance. It uses state-of-the-art cryptography, providing a strong security foundation with much less overhead than OpenVPN.
+        Disadvantages: WireGuard is newer and doesn’t have as much widespread adoption yet, but it’s rapidly gaining support.</li>
+
+    <li><strong>IPsec (Internet Protocol Security):</strong>
+        Advantages: IPsec is often used in conjunction with other protocols like L2TP (Layer 2 Tunneling Protocol) or IKEv2 (Internet Key Exchange version 2). It is widely supported and works well for mobile devices.
+        Disadvantages: IPsec tends to be more complex to configure and can suffer from slightly reduced speeds due to the overhead of encryption.</li>
+
+    <li><strong>L2TP/IPsec:</strong>
+        Advantages: Provides better security than PPTP and can be a good option when combined with IPsec for encryption.
+        Disadvantages: It’s more prone to being blocked by firewalls and can be slower due to double encapsulation (both for L2TP and IPsec).</li>
+
+    <li><strong>PPTP (Point-to-Point Tunneling Protocol):</strong>
+        Advantages: PPTP is very fast and easy to configure, making it suitable for applications that require high-speed connections.
+        Disadvantages: It’s very outdated and insecure. It’s easy to crack with modern tools, so it’s no longer recommended for privacy or security purposes.</li>
+
+   <li><strong>IKEv2/IPsec:</strong>
+        Advantages: IKEv2 is a stable and fast VPN protocol often favored for mobile devices due to its ability to reconnect quickly when the network changes (like switching from Wi-Fi to mobile data).
+        Disadvantages: It's not as widely supported as OpenVPN but is increasingly adopted due to its fast speeds and robust security.</li>
+        </section>
+        
+         <footer>
+            <p> I luv malware | Shoutout fox :) </p>
+        </footer>
+    </div>
+</body>
+</html>
+
